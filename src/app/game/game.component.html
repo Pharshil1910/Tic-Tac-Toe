@@ -1,0 +1,58 @@
+<div class="game-container">
+  <div class="game-header">
+    <h1>Tic Tac Toe</h1>
+    <div class="game-mode-selector">
+      <button 
+        [class.active]="gameMode === 'human'"
+        (click)="setGameMode('human')"
+        class="mode-btn">
+        Human vs Human
+      </button>
+      <button 
+        [class.active]="gameMode === 'computer'"
+        (click)="setGameMode('computer')"
+        class="mode-btn">
+        Human vs Computer
+      </button>
+    </div>
+  </div>
+
+  <div class="game-content">
+    <div class="status-bar" [class.computer-thinking]="isComputerThinking">
+      {{ getStatusMessage() }}
+    </div>
+
+    <div class="score-board">
+      <div class="score-card" [class.active]="currentPlayer === 'X'">
+        <span class="player-symbol">X</span>
+        <span class="score">{{ scores.X }}</span>
+      </div>
+      <div class="score-card" [class.active]="currentPlayer === 'O'">
+        <span class="player-symbol">O</span>
+        <span class="score">{{ scores.O }}</span>
+      </div>
+    </div>
+
+    <div class="board" [class.game-over]="winner || isDraw">
+      @for (row of board; track $index; let rowIndex = $index) {
+        <div class="board-row">
+          @for (cell of row; track $index) {
+            <button 
+              class="cell" 
+              [class.x]="cell === 'X'"
+              [class.o]="cell === 'O'"
+              [class.winning]="isWinningCell(rowIndex, $index)"
+              (click)="makeMove(rowIndex, $index)"
+              [disabled]="cell || winner || isDraw || isComputerThinking">
+              {{ cell }}
+            </button>
+          }
+        </div>
+      }
+    </div>
+
+    <button class="reset-btn" (click)="resetGame()">
+      Reset Game
+    </button>
+  </div>
+</div>
