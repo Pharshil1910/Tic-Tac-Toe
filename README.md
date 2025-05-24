@@ -2,8 +2,6 @@
 
 A modern, responsive Tic-Tac-Toe game built with Angular, featuring an unbeatable AI opponent and a beautiful user interface.
 
-![Tic-Tac-Toe Game](https://i.imgur.com/placeholder.png) <!-- You can add a screenshot of your game here -->
-
 ## 🎮 Features
 
 - **Two Game Modes**:
@@ -150,9 +148,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built with Angular
 - Developed with the assistance of AI using Cursor IDE
 - Inspired by classic Tic-Tac-Toe games
-
-## 📧 Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/tic-tac-toe](https://github.com/yourusername/tic-tac-toe) 
